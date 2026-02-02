@@ -93,7 +93,7 @@ export default function DividendCalculator() {
                                 name="initial"
                                 value={inputs.initial}
                                 onChange={handleInputChange}
-                                className="glass-input pl-12"
+                                className="glass-input pl-16"
                             />
                         </div>
                     </div>
@@ -107,7 +107,7 @@ export default function DividendCalculator() {
                                 name="monthly"
                                 value={inputs.monthly}
                                 onChange={handleInputChange}
-                                className="glass-input pl-12"
+                                className="glass-input pl-16"
                             />
                         </div>
                     </div>

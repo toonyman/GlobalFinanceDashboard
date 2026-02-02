@@ -75,7 +75,7 @@ export default function DigitalAssetCalculator() {
                                 name="avgPrice"
                                 value={inputs.avgPrice}
                                 onChange={handleInputChange}
-                                className="glass-input pl-12 focus:ring-blue-500"
+                                className="glass-input pl-16 focus:ring-blue-500"
                             />
                         </div>
                     </div>
@@ -101,7 +101,7 @@ export default function DigitalAssetCalculator() {
                                 name="currentPrice"
                                 value={inputs.currentPrice}
                                 onChange={handleInputChange}
-                                className="glass-input pl-12 focus:ring-blue-500"
+                                className="glass-input pl-16 focus:ring-blue-500"
                             />
                         </div>
                         {/* Quick adjust buttons */}
