@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Calculator, TrendingUp, DollarSign } from 'lucide-react';
 
-export default function DividendCalculator() {
+export default function DividendCalculator({ currencySymbol = '$' }) {
     const { t, i18n } = useTranslation();
     const [inputs, setInputs] = useState({
         initial: 10000,
@@ -20,7 +20,7 @@ export default function DividendCalculator() {
         monthlyIncome: 0
     });
 
-    const currency = t('common.currency');
+    const currency = currencySymbol;
 
     useEffect(() => {
         calculateDividends();
@@ -86,30 +86,24 @@ export default function DividendCalculator() {
                 <div className="space-y-6">
                     <div>
                         <label className="block text-gray-400 text-sm mb-2">{t('dividend.initialInvestment')}</label>
-                        <div className="relative">
-                            <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
-                            <input
-                                type="number"
-                                name="initial"
-                                value={inputs.initial}
-                                onChange={handleInputChange}
-                                className="glass-input pl-16"
-                            />
-                        </div>
+                        <input
+                            type="number"
+                            name="initial"
+                            value={inputs.initial}
+                            onChange={handleInputChange}
+                            className="glass-input"
+                        />
                     </div>
 
                     <div>
                         <label className="block text-gray-400 text-sm mb-2">{t('dividend.monthlyContribution')}</label>
-                        <div className="relative">
-                            <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
-                            <input
-                                type="number"
-                                name="monthly"
-                                value={inputs.monthly}
-                                onChange={handleInputChange}
-                                className="glass-input pl-16"
-                            />
-                        </div>
+                        <input
+                            type="number"
+                            name="monthly"
+                            value={inputs.monthly}
+                            onChange={handleInputChange}
+                            className="glass-input"
+                        />
                     </div>
 
                     <div className="grid grid-cols-2 gap-4">

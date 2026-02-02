@@ -6,12 +6,16 @@ import ThemeToggle from './components/ThemeToggle';
 import LanguageSwitcher from './components/LanguageSwitcher';
 import ShareButton from './components/ShareButton';
 
+import CurrencySwitcher from './components/CurrencySwitcher';
 import SEO from './components/SEO';
 import { LayoutDashboard, WalletCards } from 'lucide-react';
 
 function App() {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState('dividend');
+  const [currency, setCurrency] = useState('USD'); // Default currency
+
+  const currencySymbol = currency === 'USD' ? '$' : '₩';
 
   return (
     <div className="min-h-screen pb-12 font-sans selection:bg-electric-500/30">
@@ -30,6 +34,7 @@ function App() {
           </div>
 
           <div className="flex items-center gap-3">
+            <CurrencySwitcher currency={currency} setCurrency={setCurrency} />
             <LanguageSwitcher />
             <ThemeToggle />
             <ShareButton />
@@ -71,7 +76,10 @@ function App() {
         {/* Main Content Area */}
         <div className="max-w-4xl mx-auto">
           <div className="transition-all duration-500 transform">
-            {activeTab === 'dividend' ? <DividendCalculator /> : <DigitalAssetCalculator />}
+            {activeTab === 'dividend'
+              ? <DividendCalculator currencySymbol={currencySymbol} />
+              : <DigitalAssetCalculator currencySymbol={currencySymbol} />
+            }
           </div>
         </div>
 

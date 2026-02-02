@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell, ReferenceLine } from 'recharts';
 import { Bitcoin, Calculator, DollarSign, ArrowUpRight, ArrowDownRight } from 'lucide-react';
 
-export default function DigitalAssetCalculator() {
+export default function DigitalAssetCalculator({ currencySymbol = '$' }) {
     const { t, i18n } = useTranslation();
     const [inputs, setInputs] = useState({
         avgPrice: 50000,
@@ -19,7 +19,7 @@ export default function DigitalAssetCalculator() {
         isProfit: true
     });
 
-    const currency = t('common.currency');
+    const currency = currencySymbol;
 
     useEffect(() => {
         const avg = parseFloat(inputs.avgPrice) || 0;
@@ -68,16 +68,13 @@ export default function DigitalAssetCalculator() {
                 <div className="space-y-6">
                     <div>
                         <label className="block text-gray-400 text-sm mb-2">{t('crypto.avgPrice')}</label>
-                        <div className="relative">
-                            <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
-                            <input
-                                type="number"
-                                name="avgPrice"
-                                value={inputs.avgPrice}
-                                onChange={handleInputChange}
-                                className="glass-input pl-16 focus:ring-blue-500"
-                            />
-                        </div>
+                        <input
+                            type="number"
+                            name="avgPrice"
+                            value={inputs.avgPrice}
+                            onChange={handleInputChange}
+                            className="glass-input focus:ring-blue-500"
+                        />
                     </div>
 
                     <div>
@@ -94,16 +91,13 @@ export default function DigitalAssetCalculator() {
 
                     <div>
                         <label className="block text-gray-400 text-sm mb-2">{t('crypto.currentPrice')}</label>
-                        <div className="relative">
-                            <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
-                            <input
-                                type="number"
-                                name="currentPrice"
-                                value={inputs.currentPrice}
-                                onChange={handleInputChange}
-                                className="glass-input pl-16 focus:ring-blue-500"
-                            />
-                        </div>
+                        <input
+                            type="number"
+                            name="currentPrice"
+                            value={inputs.currentPrice}
+                            onChange={handleInputChange}
+                            className="glass-input focus:ring-blue-500"
+                        />
                         {/* Quick adjust buttons */}
                         <div className="flex gap-2 mt-2">
                             {[-10, -5, +5, +10].map(percent => (
