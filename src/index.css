@@ -4,21 +4,21 @@
 
 @layer base {
   body {
-    @apply bg-background text-white antialiased font-sans transition-colors duration-300;
+    @apply bg-slate-50 text-slate-900 dark:bg-background dark:text-white antialiased font-sans transition-colors duration-300;
   }
 }
 
 @layer utilities {
   .glass-card {
-    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-xl rounded-2xl;
+    @apply bg-white/70 border-slate-200/60 dark:bg-white/5 dark:border-white/10 backdrop-blur-md border shadow-xl rounded-2xl;
   }
-  
+
   .glass-input {
-    @apply bg-black/20 border border-white/10 rounded-lg px-4 py-2 focus:ring-2 focus:ring-electric-500 focus:border-transparent outline-none transition-all duration-200 placeholder-gray-500 w-full;
+    @apply bg-white border-slate-200 text-slate-900 placeholder:text-slate-400 dark:bg-black/20 dark:border-white/10 dark:text-white dark:placeholder:text-gray-500 border rounded-lg px-4 py-2 focus:ring-2 focus:ring-electric-500 focus:border-transparent outline-none transition-all duration-200 w-full;
   }
 
   .glass-button {
-    @apply bg-white/10 hover:bg-white/20 active:bg-white/30 transition-all duration-200 rounded-lg px-4 py-2 font-medium;
+    @apply bg-slate-200/50 hover:bg-slate-200/80 active:bg-slate-300/80 dark:bg-white/10 dark:hover:bg-white/20 dark:active:bg-white/30 text-slate-900 dark:text-white transition-all duration-200 rounded-lg px-4 py-2 font-medium;
   }
 
   .text-gradient {
