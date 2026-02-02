@@ -1,0 +1,33 @@
+{
+    "app": {
+        "title": "Global Finance Dashboard",
+        "dividendCalculator": "Dividend Compound",
+        "cryptoCalculator": "Digital Asset Profit",
+        "adSpace": "AD SPACE"
+    },
+    "dividend": {
+        "initialInvestment": "Initial Investment",
+        "monthlyContribution": "Monthly Contribution",
+        "dividendRate": "Dividend Yield (%)",
+        "growthRate": "Dividend Growth Rate (%)",
+        "years": "Years to Grow",
+        "calculate": "Calculate",
+        "totalValue": "Total Portfolio Value",
+        "annualDividend": "Annual Dividend",
+        "monthlyIncome": "Monthly Income",
+        "chartTitle": "Projected Growth"
+    },
+    "crypto": {
+        "avgPrice": "Average Buy Price",
+        "quantity": "Quantity Held",
+        "currentPrice": "Target / Current Price",
+        "investedAmount": "Total Invested",
+        "currentValue": "Current Value",
+        "profit": "Profit / Loss",
+        "roi": "Return on Investment",
+        "breakeven": "Breakeven Price"
+    },
+    "common": {
+        "currency": "$"
+    }
+}

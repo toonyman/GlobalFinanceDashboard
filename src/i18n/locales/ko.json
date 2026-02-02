@@ -1,0 +1,33 @@
+{
+    "app": {
+        "title": "글로벌 금융 대시보드",
+        "dividendCalculator": "배당금 복리 계산기",
+        "cryptoCalculator": "디지털 자산 수익률",
+        "adSpace": "광고 영역"
+    },
+    "dividend": {
+        "initialInvestment": "초기 투자금",
+        "monthlyContribution": "월 적립액",
+        "dividendRate": "배당률 (%)",
+        "growthRate": "배당 성장률 (%)",
+        "years": "투자 기간 (년)",
+        "calculate": "계산하기",
+        "totalValue": "총 자산 가치",
+        "annualDividend": "연간 배당금",
+        "monthlyIncome": "월 예상 배당금",
+        "chartTitle": "성장 예측 그래프"
+    },
+    "crypto": {
+        "avgPrice": "매수 평단가",
+        "quantity": "보유 수량",
+        "currentPrice": "목표가 / 현재가",
+        "investedAmount": "총 매수 금액",
+        "currentValue": "총 평가 금액",
+        "profit": "평가 손익",
+        "roi": "수익률 (ROI)",
+        "breakeven": "원금 회수 가격"
+    },
+    "common": {
+        "currency": "₩"
+    }
+}
