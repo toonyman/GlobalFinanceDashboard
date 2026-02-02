@@ -67,7 +67,7 @@ function App() {
             <button
               onClick={() => setActiveTab('dividend')}
 
-              className={`flex items-center gap-2 px-6 py-3 rounded-xl transition-all duration-300 font-medium ${activeTab === 'dividend'
+              className={`flex items-center gap-2 px-6 py-3 rounded-xl transition-colors duration-300 font-medium ${activeTab === 'dividend'
                 ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-500/25'
                 : 'text-gray-400 hover:text-white hover:bg-white/5'
                 }`}
@@ -79,7 +79,7 @@ function App() {
             <button
 
               onClick={() => setActiveTab('crypto')}
-              className={`flex items-center gap-2 px-6 py-3 rounded-xl transition-all duration-300 font-medium ${activeTab === 'crypto'
+              className={`flex items-center gap-2 px-6 py-3 rounded-xl transition-colors duration-300 font-medium ${activeTab === 'crypto'
                 ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/25'
                 : 'text-gray-400 hover:text-white hover:bg-white/5'
                 }`}

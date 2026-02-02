@@ -9,7 +9,7 @@ export default function CurrencySwitcher({ currency, setCurrency }) {
     return (
         <button
             onClick={toggleCurrency}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-200/50 hover:bg-slate-200/80 dark:bg-white/10 dark:hover:bg-white/20 transition-all duration-300 backdrop-blur-sm border border-slate-200/60 dark:border-white/10 text-sm font-medium text-slate-900 dark:text-white"
+            className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-200/50 hover:bg-slate-200/80 dark:bg-white/10 dark:hover:bg-white/20 transition-colors duration-300 backdrop-blur-sm border border-slate-200/60 dark:border-white/10 text-sm font-medium text-slate-900 dark:text-white"
             title="Switch Currency"
         >
             {currency === 'USD' ? (
