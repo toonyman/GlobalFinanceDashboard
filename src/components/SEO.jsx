@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 export default function SEO() {
     const { t, i18n } = useTranslation();
     const currentLang = i18n.language;
-    const siteUrl = 'https://finance-dashboard.demo'; // Replace with actual URL
+    const siteUrl = 'https://global-finance-dashboard.vercel.app';
 
     const title = t('app.title');
     const description = currentLang === 'en'
