@@ -69,28 +69,9 @@ function App() {
         </div>
 
         {/* Main Content Area */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          {/* Left/Main Column - Calculator */}
-          <div className="lg:col-span-12 xl:col-span-9 space-y-8">
-            <div className="transition-all duration-500 transform">
-              {activeTab === 'dividend' ? <DividendCalculator /> : <DigitalAssetCalculator />}
-            </div>
-
-
-          </div>
-
-          {/* Right Column - Placeholder or Future Features (Hidden on mobile for now, or used for Ads) */}
-          <div className="hidden xl:block xl:col-span-3 space-y-8">
-            <div className="glass-card p-6 h-[600px] flex flex-col justify-center items-center text-center">
-              <div className="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mb-4">
-                <span className="text-2xl">🚀</span>
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">Pro Features</h3>
-              <p className="text-gray-400 mb-6">Unlock advanced analytics and personalized portfolio tracking.</p>
-              <button className="glass-button w-full border-indigo-500/30 hover:bg-indigo-500/20 text-indigo-300">
-                Coming Soon
-              </button>
-            </div>
+        <div className="max-w-4xl mx-auto">
+          <div className="transition-all duration-500 transform">
+            {activeTab === 'dividend' ? <DividendCalculator /> : <DigitalAssetCalculator />}
           </div>
         </div>
 
