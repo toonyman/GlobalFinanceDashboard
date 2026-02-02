@@ -13,7 +13,7 @@ import { LayoutDashboard, WalletCards } from 'lucide-react';
 function App() {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState('dividend');
-  const [activeTab, setActiveTab] = useState('dividend');
+
   const [currency, setCurrency] = useState('USD'); // Default currency
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
 

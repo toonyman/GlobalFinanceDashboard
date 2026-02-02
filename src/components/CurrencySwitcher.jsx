@@ -1,5 +1,5 @@
 import React from 'react';
-import { DollarSign, Won } from 'lucide-react';
+import { DollarSign } from 'lucide-react';
 
 export default function CurrencySwitcher({ currency, setCurrency }) {
     const toggleCurrency = () => {
