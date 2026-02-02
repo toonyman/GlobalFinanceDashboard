@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import DividendCalculator from './components/DividendCalculator';
 import DigitalAssetCalculator from './components/DigitalAssetCalculator';
@@ -13,9 +13,25 @@ import { LayoutDashboard, WalletCards } from 'lucide-react';
 function App() {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState('dividend');
+  const [activeTab, setActiveTab] = useState('dividend');
   const [currency, setCurrency] = useState('USD'); // Default currency
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
 
   const currencySymbol = currency === 'USD' ? '$' : '₩';
+  const isDarkMode = theme === 'dark';
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  };
 
   return (
     <div className="min-h-screen pb-12 font-sans selection:bg-electric-500/30">
@@ -36,7 +52,7 @@ function App() {
           <div className="flex items-center gap-3">
             <CurrencySwitcher currency={currency} setCurrency={setCurrency} />
             <LanguageSwitcher />
-            <ThemeToggle />
+            <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
             <ShareButton />
           </div>
         </div>
@@ -77,8 +93,8 @@ function App() {
         <div className="max-w-4xl mx-auto">
           <div className="transition-all duration-500 transform">
             {activeTab === 'dividend'
-              ? <DividendCalculator currencySymbol={currencySymbol} />
-              : <DigitalAssetCalculator currencySymbol={currencySymbol} />
+              ? <DividendCalculator currencySymbol={currencySymbol} isDarkMode={isDarkMode} />
+              : <DigitalAssetCalculator currencySymbol={currencySymbol} isDarkMode={isDarkMode} />
             }
           </div>
         </div>
