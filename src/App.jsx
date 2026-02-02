@@ -22,13 +22,13 @@ function App() {
       <SEO />
 
       {/* Navbar */}
-      <nav className="fixed top-0 inset-x-0 z-40 bg-background/80 backdrop-blur-lg border-b border-white/5">
+      <nav className="fixed top-0 inset-x-0 z-40 bg-white/80 dark:bg-background/80 backdrop-blur-lg border-b border-slate-200 dark:border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold">
               GF
             </div>
-            <h1 className="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 hidden sm:block">
+            <h1 className="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-500 dark:from-white dark:to-gray-400 hidden sm:block">
               {t('app.title')}
             </h1>
           </div>
@@ -47,7 +47,7 @@ function App() {
 
         {/* Tab Navigation */}
         <div className="flex justify-center mb-10 animate-slide-up">
-          <div className="bg-white/5 backdrop-blur-sm p-1.5 rounded-2xl border border-white/10 flex gap-2">
+          <div className="bg-slate-100 dark:bg-white/5 backdrop-blur-sm p-1.5 rounded-2xl border border-slate-200 dark:border-white/10 flex gap-2">
             <button
               onClick={() => setActiveTab('dividend')}
               className={`flex items-center gap-2 px-6 py-3 rounded-xl transition-all duration-300 font-medium ${activeTab === 'dividend'
@@ -86,7 +86,7 @@ function App() {
 
       </main>
 
-      <footer className="py-8 text-center text-gray-500 text-sm border-t border-white/5 mt-12 bg-black/20 backdrop-blur-lg">
+      <footer className="py-8 text-center text-slate-500 dark:text-gray-500 text-sm border-t border-slate-200 dark:border-white/5 mt-12 bg-slate-50 dark:bg-black/20 backdrop-blur-lg">
         <p>&copy; {new Date().getFullYear()} Global Finance Dashboard. All rights reserved.</p>
       </footer>
     </div>
