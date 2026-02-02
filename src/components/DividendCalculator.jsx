@@ -174,28 +174,38 @@ export default function DividendCalculator({ currencySymbol = '$', isDarkMode })
                             <AreaChart data={data}>
                                 <defs>
                                     <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="5%" stopColor="#10b981" stopOpacity={0.3} />
-                                        <stop offset="95%" stopColor="#10b981" stopOpacity={0} />
+                                        <stop offset="5%" stopColor={isDarkMode ? "#10b981" : "#059669"} stopOpacity={0.3} />
+                                        <stop offset="95%" stopColor={isDarkMode ? "#10b981" : "#059669"} stopOpacity={0} />
                                     </linearGradient>
                                 </defs>
-                                <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.3} />
-                                <XAxis dataKey="year" stroke="#94a3b8" fontSize={12} tickLine={false} axisLine={false} />
+                                <CartesianGrid strokeDasharray="3 3" stroke={isDarkMode ? "#334155" : "#cbd5e1"} opacity={0.3} />
+                                <XAxis
+                                    dataKey="year"
+                                    stroke={isDarkMode ? "#94a3b8" : "#64748b"}
+                                    fontSize={12}
+                                    tickLine={false}
+                                    axisLine={false}
+                                />
                                 <YAxis
-                                    stroke="#94a3b8"
+                                    stroke={isDarkMode ? "#94a3b8" : "#64748b"}
                                     fontSize={12}
                                     tickFormatter={(val) => `${val / 1000}k`}
                                     tickLine={false}
                                     axisLine={false}
                                 />
                                 <Tooltip
-                                    contentStyle={{ backgroundColor: '#1e293b', borderColor: '#334155', color: '#fff' }}
-                                    itemStyle={{ color: '#10b981' }}
+                                    contentStyle={{
+                                        backgroundColor: isDarkMode ? '#1e293b' : '#ffffff',
+                                        borderColor: isDarkMode ? '#334155' : '#e2e8f0',
+                                        color: isDarkMode ? '#fff' : '#0f172a'
+                                    }}
+                                    itemStyle={{ color: isDarkMode ? '#10b981' : '#059669' }}
                                     formatter={(val) => `${currency} ${formatMoney(val)}`}
                                 />
                                 <Area
                                     type="monotone"
                                     dataKey="value"
-                                    stroke="#10b981"
+                                    stroke={isDarkMode ? "#10b981" : "#059669"}
                                     strokeWidth={2}
                                     fillOpacity={1}
                                     fill="url(#colorValue)"

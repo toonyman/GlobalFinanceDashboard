@@ -137,40 +137,40 @@ export default function DigitalAssetCalculator({ currencySymbol = '$', isDarkMod
 
                     <div className="h-[250px] w-full bg-slate-100 dark:bg-black/20 rounded-xl p-4 border border-slate-200 dark:border-white/5 flex items-center justify-center">
                         <ResponsiveContainer width="100%" height="100%">
-                            <ResponsiveContainer width="100%" height="100%">
-                                <BarChart data={chartData} layout="vertical">
-                                    <XAxis type="number" hide />
-                                    <YAxis
-                                        type="category"
-                                        dataKey="name"
-                                        width={100}
-                                        tick={{ fill: isDarkMode ? '#94a3b8' : '#64748b', fontSize: 12 }}
-                                    />
-                                    <Tooltip
-                                        contentStyle={{
-                                            backgroundColor: isDarkMode ? '#1e293b' : '#ffffff',
-                                            borderColor: isDarkMode ? '#334155' : '#e2e8f0',
-                                            color: isDarkMode ? '#fff' : '#0f172a'
-                                        }}
-                                        cursor={{ fill: 'transparent' }}
-                                        formatter={(val) => `${currency} ${formatMoney(val)}`}
-                                    />
-                                    <Bar dataKey="value" barSize={32} radius={[0, 4, 4, 0]}>
-                                        {chartData.map((entry, index) => (
-                                            <Cell
-                                                key={`cell-${index}`}
-                                                fill={index === 0
-                                                    ? (isDarkMode ? '#64748b' : '#cbd5e1')
-                                                    : (result.isProfit
-                                                        ? (isDarkMode ? '#10b981' : '#059669')
-                                                        : (isDarkMode ? '#ef4444' : '#dc2626')
-                                                    )
-                                                }
-                                            />
-                                        ))}
-                                    </Bar>
-                                </BarChart>
-                            </ResponsiveContainer>
+
+                            <BarChart data={chartData} layout="vertical">
+                                <XAxis type="number" hide />
+                                <YAxis
+                                    type="category"
+                                    dataKey="name"
+                                    width={100}
+                                    tick={{ fill: isDarkMode ? '#94a3b8' : '#64748b', fontSize: 12 }}
+                                />
+                                <Tooltip
+                                    contentStyle={{
+                                        backgroundColor: isDarkMode ? '#1e293b' : '#ffffff',
+                                        borderColor: isDarkMode ? '#334155' : '#e2e8f0',
+                                        color: isDarkMode ? '#fff' : '#0f172a'
+                                    }}
+                                    cursor={{ fill: 'transparent' }}
+                                    formatter={(val) => `${currency} ${formatMoney(val)}`}
+                                />
+                                <Bar dataKey="value" barSize={32} radius={[0, 4, 4, 0]}>
+                                    {chartData.map((entry, index) => (
+                                        <Cell
+                                            key={`cell-${index}`}
+                                            fill={index === 0
+                                                ? (isDarkMode ? '#64748b' : '#cbd5e1')
+                                                : (result.isProfit
+                                                    ? (isDarkMode ? '#10b981' : '#059669')
+                                                    : (isDarkMode ? '#ef4444' : '#dc2626')
+                                                )
+                                            }
+                                        />
+                                    ))}
+                                </Bar>
+                            </BarChart>
+                        </ResponsiveContainer>
                     </div>
 
                     <div className="flex justify-between items-center text-sm text-slate-500 dark:text-gray-500 bg-slate-100 dark:bg-white/5 p-3 rounded-lg border border-slate-200 dark:border-white/5">
