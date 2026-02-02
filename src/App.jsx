@@ -66,6 +66,7 @@ function App() {
           <div className="bg-slate-100 dark:bg-white/5 backdrop-blur-sm p-1.5 rounded-2xl border border-slate-200 dark:border-white/10 flex gap-2">
             <button
               onClick={() => setActiveTab('dividend')}
+              onClick={() => setActiveTab('dividend')}
               className={`flex items-center gap-2 px-6 py-3 rounded-xl transition-all duration-300 font-medium ${activeTab === 'dividend'
                 ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-500/25'
                 : 'text-gray-400 hover:text-white hover:bg-white/5'
@@ -76,6 +77,7 @@ function App() {
               <span className="sm:hidden">Dividend</span>
             </button>
             <button
+              onClick={() => setActiveTab('crypto')}
               onClick={() => setActiveTab('crypto')}
               className={`flex items-center gap-2 px-6 py-3 rounded-xl transition-all duration-300 font-medium ${activeTab === 'crypto'
                 ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/25'
@@ -91,7 +93,7 @@ function App() {
 
         {/* Main Content Area */}
         <div className="max-w-4xl mx-auto">
-          <div className="transition-all duration-500 transform">
+          <div className="transition-opacity duration-300">
             {activeTab === 'dividend'
               ? <DividendCalculator currencySymbol={currencySymbol} isDarkMode={isDarkMode} />
               : <DigitalAssetCalculator currencySymbol={currencySymbol} isDarkMode={isDarkMode} />
