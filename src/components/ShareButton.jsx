@@ -30,7 +30,7 @@ export default function ShareButton() {
         <div className="relative z-50">
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-electric-500 to-indigo-600 hover:from-electric-400 hover:to-indigo-500 text-white font-medium shadow-lg shadow-blue-500/20 transition-all duration-300 transform hover:scale-105"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-electric-500 to-indigo-600 hover:from-electric-400 hover:to-indigo-500 text-white font-medium shadow-lg shadow-blue-500/20 transition duration-300 transform hover:scale-105"
             >
                 <Share2 className="w-4 h-4" />
                 <span>Share</span>
