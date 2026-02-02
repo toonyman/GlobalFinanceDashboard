@@ -5,7 +5,7 @@ import DigitalAssetCalculator from './components/DigitalAssetCalculator';
 import ThemeToggle from './components/ThemeToggle';
 import LanguageSwitcher from './components/LanguageSwitcher';
 import ShareButton from './components/ShareButton';
-import AdPlaceholder from './components/AdPlaceholder';
+
 import SEO from './components/SEO';
 import { LayoutDashboard, WalletCards } from 'lucide-react';
 
@@ -38,10 +38,7 @@ function App() {
       </nav>
 
       <main className="pt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top Ad Space */}
-        <div className="mb-8 animate-fade-in">
-          <AdPlaceholder height="90px" />
-        </div>
+
 
         {/* Tab Navigation */}
         <div className="flex justify-center mb-10 animate-slide-up">
@@ -49,8 +46,8 @@ function App() {
             <button
               onClick={() => setActiveTab('dividend')}
               className={`flex items-center gap-2 px-6 py-3 rounded-xl transition-all duration-300 font-medium ${activeTab === 'dividend'
-                  ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-500/25'
-                  : 'text-gray-400 hover:text-white hover:bg-white/5'
+                ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-500/25'
+                : 'text-gray-400 hover:text-white hover:bg-white/5'
                 }`}
             >
               <LayoutDashboard className="w-4 h-4" />
@@ -60,8 +57,8 @@ function App() {
             <button
               onClick={() => setActiveTab('crypto')}
               className={`flex items-center gap-2 px-6 py-3 rounded-xl transition-all duration-300 font-medium ${activeTab === 'crypto'
-                  ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/25'
-                  : 'text-gray-400 hover:text-white hover:bg-white/5'
+                ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/25'
+                : 'text-gray-400 hover:text-white hover:bg-white/5'
                 }`}
             >
               <WalletCards className="w-4 h-4" />
@@ -79,8 +76,7 @@ function App() {
               {activeTab === 'dividend' ? <DividendCalculator /> : <DigitalAssetCalculator />}
             </div>
 
-            {/* Mid Ad Space */}
-            <AdPlaceholder height="250px" />
+
           </div>
 
           {/* Right Column - Placeholder or Future Features (Hidden on mobile for now, or used for Ads) */}
@@ -98,10 +94,7 @@ function App() {
           </div>
         </div>
 
-        {/* Bottom Ad Space */}
-        <div className="my-8">
-          <AdPlaceholder height="90px" />
-        </div>
+
       </main>
 
       <footer className="py-8 text-center text-gray-500 text-sm border-t border-white/5 mt-12 bg-black/20 backdrop-blur-lg">
