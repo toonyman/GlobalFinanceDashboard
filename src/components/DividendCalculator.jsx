@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Calculator, TrendingUp, DollarSign } from 'lucide-react';
 
-export default function DividendCalculator({ currencySymbol = '$' }) {
+export default function DividendCalculator({ currencySymbol = '$', isDarkMode }) {
     const { t, i18n } = useTranslation();
     const [inputs, setInputs] = useState({
         initial: 10000,
