@@ -75,17 +75,17 @@ export default function DividendCalculator({ currencySymbol = '$' }) {
             <div className="absolute top-0 right-0 p-32 bg-emerald-500/10 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
             <div className="flex items-center gap-3 mb-8">
-                <div className="p-3 bg-emerald-500/20 rounded-xl">
-                    <TrendingUp className="w-6 h-6 text-emerald-400" />
+                <div className="p-3 bg-emerald-100 dark:bg-emerald-500/20 rounded-xl">
+                    <TrendingUp className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
                 </div>
-                <h2 className="text-2xl font-bold text-white">{t('app.dividendCalculator')}</h2>
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white">{t('app.dividendCalculator')}</h2>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {/* Input Section */}
                 <div className="space-y-6">
                     <div>
-                        <label className="block text-gray-400 text-sm mb-2">{t('dividend.initialInvestment')}</label>
+                        <label className="block text-slate-500 dark:text-gray-400 text-sm mb-2">{t('dividend.initialInvestment')}</label>
                         <input
                             type="number"
                             name="initial"
@@ -96,7 +96,7 @@ export default function DividendCalculator({ currencySymbol = '$' }) {
                     </div>
 
                     <div>
-                        <label className="block text-gray-400 text-sm mb-2">{t('dividend.monthlyContribution')}</label>
+                        <label className="block text-slate-500 dark:text-gray-400 text-sm mb-2">{t('dividend.monthlyContribution')}</label>
                         <input
                             type="number"
                             name="monthly"
@@ -108,7 +108,7 @@ export default function DividendCalculator({ currencySymbol = '$' }) {
 
                     <div className="grid grid-cols-2 gap-4">
                         <div>
-                            <label className="block text-gray-400 text-sm mb-2">{t('dividend.dividendRate')}</label>
+                            <label className="block text-slate-500 dark:text-gray-400 text-sm mb-2">{t('dividend.dividendRate')}</label>
                             <input
                                 type="number"
                                 name="yieldRate"
@@ -119,7 +119,7 @@ export default function DividendCalculator({ currencySymbol = '$' }) {
                             />
                         </div>
                         <div>
-                            <label className="block text-gray-400 text-sm mb-2">{t('dividend.growthRate')}</label>
+                            <label className="block text-slate-500 dark:text-gray-400 text-sm mb-2">{t('dividend.growthRate')}</label>
                             <input
                                 type="number"
                                 name="growthRate"
@@ -132,7 +132,7 @@ export default function DividendCalculator({ currencySymbol = '$' }) {
                     </div>
 
                     <div>
-                        <label className="block text-gray-400 text-sm mb-2">{t('dividend.years')}: {inputs.years}</label>
+                        <label className="block text-slate-500 dark:text-gray-400 text-sm mb-2">{t('dividend.years')}: {inputs.years}</label>
                         <input
                             type="range"
                             name="years"
@@ -140,7 +140,7 @@ export default function DividendCalculator({ currencySymbol = '$' }) {
                             max="50"
                             value={inputs.years}
                             onChange={handleInputChange}
-                            className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-emerald-500"
+                            className="w-full h-2 bg-slate-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer accent-emerald-500"
                         />
                     </div>
                 </div>
@@ -148,28 +148,28 @@ export default function DividendCalculator({ currencySymbol = '$' }) {
                 {/* Results & Chart Section */}
                 <div className="lg:col-span-2 space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-emerald-500/50 transition-colors">
-                            <p className="text-gray-400 text-sm mb-1">{t('dividend.totalValue')}</p>
-                            <p className="text-xl md:text-2xl font-bold text-white tracking-tight">
+                        <div className="p-4 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-emerald-500/50 transition-colors">
+                            <p className="text-slate-500 dark:text-gray-400 text-sm mb-1">{t('dividend.totalValue')}</p>
+                            <p className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white tracking-tight">
                                 {currency} {formatMoney(result.totalValue)}
                             </p>
                         </div>
-                        <div className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-emerald-500/50 transition-colors">
-                            <p className="text-gray-400 text-sm mb-1">{t('dividend.annualDividend')}</p>
-                            <p className="text-xl md:text-2xl font-bold text-emerald-400 tracking-tight">
+                        <div className="p-4 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-emerald-500/50 transition-colors">
+                            <p className="text-slate-500 dark:text-gray-400 text-sm mb-1">{t('dividend.annualDividend')}</p>
+                            <p className="text-xl md:text-2xl font-bold text-emerald-600 dark:text-emerald-400 tracking-tight">
                                 {currency} {formatMoney(result.annualDividend)}
                             </p>
                         </div>
-                        <div className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-emerald-500/50 transition-colors">
-                            <p className="text-gray-400 text-sm mb-1">{t('dividend.monthlyIncome')}</p>
-                            <p className="text-xl md:text-2xl font-bold text-emerald-400 tracking-tight">
+                        <div className="p-4 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-emerald-500/50 transition-colors">
+                            <p className="text-slate-500 dark:text-gray-400 text-sm mb-1">{t('dividend.monthlyIncome')}</p>
+                            <p className="text-xl md:text-2xl font-bold text-emerald-600 dark:text-emerald-400 tracking-tight">
                                 {currency} {formatMoney(result.monthlyIncome)}
                             </p>
                         </div>
                     </div>
 
-                    <div className="h-[300px] w-full bg-black/20 rounded-xl p-4 border border-white/5">
-                        <h3 className="text-sm text-gray-400 mb-4 ml-2">{t('dividend.chartTitle')}</h3>
+                    <div className="h-[300px] w-full bg-slate-100 dark:bg-black/20 rounded-xl p-4 border border-slate-200 dark:border-white/5">
+                        <h3 className="text-sm text-slate-500 dark:text-gray-400 mb-4 ml-2">{t('dividend.chartTitle')}</h3>
                         <ResponsiveContainer width="100%" height="100%">
                             <AreaChart data={data}>
                                 <defs>

@@ -57,17 +57,17 @@ export default function DigitalAssetCalculator({ currencySymbol = '$' }) {
             <div className="absolute top-0 left-0 p-32 bg-blue-500/10 blur-3xl rounded-full -translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
             <div className="flex items-center gap-3 mb-8">
-                <div className="p-3 bg-blue-500/20 rounded-xl">
-                    <Bitcoin className="w-6 h-6 text-blue-400" />
+                <div className="p-3 bg-blue-100 dark:bg-blue-500/20 rounded-xl">
+                    <Bitcoin className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                 </div>
-                <h2 className="text-2xl font-bold text-white">{t('app.cryptoCalculator')}</h2>
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white">{t('app.cryptoCalculator')}</h2>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {/* Input Section */}
                 <div className="space-y-6">
                     <div>
-                        <label className="block text-gray-400 text-sm mb-2">{t('crypto.avgPrice')}</label>
+                        <label className="block text-slate-500 dark:text-gray-400 text-sm mb-2">{t('crypto.avgPrice')}</label>
                         <input
                             type="number"
                             name="avgPrice"
@@ -78,7 +78,7 @@ export default function DigitalAssetCalculator({ currencySymbol = '$' }) {
                     </div>
 
                     <div>
-                        <label className="block text-gray-400 text-sm mb-2">{t('crypto.quantity')}</label>
+                        <label className="block text-slate-500 dark:text-gray-400 text-sm mb-2">{t('crypto.quantity')}</label>
                         <input
                             type="number"
                             name="quantity"
@@ -90,7 +90,7 @@ export default function DigitalAssetCalculator({ currencySymbol = '$' }) {
                     </div>
 
                     <div>
-                        <label className="block text-gray-400 text-sm mb-2">{t('crypto.currentPrice')}</label>
+                        <label className="block text-slate-500 dark:text-gray-400 text-sm mb-2">{t('crypto.currentPrice')}</label>
                         <input
                             type="number"
                             name="currentPrice"
@@ -107,7 +107,7 @@ export default function DigitalAssetCalculator({ currencySymbol = '$' }) {
                                         ...prev,
                                         currentPrice: Math.round(parseFloat(prev.currentPrice) * (1 + percent / 100))
                                     }))}
-                                    className="px-2 py-1 text-xs rounded bg-white/5 hover:bg-white/10 text-gray-300 transition-colors"
+                                    className="px-2 py-1 text-xs rounded bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10 text-slate-600 dark:text-gray-300 transition-colors"
                                 >
                                     {percent > 0 ? '+' : ''}{percent}%
                                 </button>
@@ -119,23 +119,23 @@ export default function DigitalAssetCalculator({ currencySymbol = '$' }) {
                 {/* Results Section */}
                 <div className="lg:col-span-2 space-y-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div className="p-5 rounded-xl bg-white/5 border border-white/10">
-                            <p className="text-gray-400 text-sm mb-1">{t('crypto.profit')}</p>
-                            <div className={`flex items-center gap-2 text-2xl font-bold ${result.isProfit ? 'text-green-400' : 'text-red-400'}`}>
+                        <div className="p-5 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10">
+                            <p className="text-slate-500 dark:text-gray-400 text-sm mb-1">{t('crypto.profit')}</p>
+                            <div className={`flex items-center gap-2 text-2xl font-bold ${result.isProfit ? 'text-green-600 dark:text-green-400' : 'text-red-500 dark:text-red-400'}`}>
                                 {result.isProfit ? <ArrowUpRight className="w-6 h-6" /> : <ArrowDownRight className="w-6 h-6" />}
                                 {currency} {formatMoney(result.profit)}
                             </div>
                         </div>
 
-                        <div className="p-5 rounded-xl bg-white/5 border border-white/10">
-                            <p className="text-gray-400 text-sm mb-1">{t('crypto.roi')}</p>
-                            <div className={`text-2xl font-bold ${result.isProfit ? 'text-green-400' : 'text-red-400'}`}>
+                        <div className="p-5 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10">
+                            <p className="text-slate-500 dark:text-gray-400 text-sm mb-1">{t('crypto.roi')}</p>
+                            <div className={`text-2xl font-bold ${result.isProfit ? 'text-green-600 dark:text-green-400' : 'text-red-500 dark:text-red-400'}`}>
                                 {result.isProfit ? '+' : ''}{result.roi.toFixed(2)}%
                             </div>
                         </div>
                     </div>
 
-                    <div className="h-[250px] w-full bg-black/20 rounded-xl p-4 border border-white/5 flex items-center justify-center">
+                    <div className="h-[250px] w-full bg-slate-100 dark:bg-black/20 rounded-xl p-4 border border-slate-200 dark:border-white/5 flex items-center justify-center">
                         <ResponsiveContainer width="100%" height="100%">
                             <BarChart data={chartData} layout="vertical">
                                 <XAxis type="number" hide />
@@ -154,9 +154,9 @@ export default function DigitalAssetCalculator({ currencySymbol = '$' }) {
                         </ResponsiveContainer>
                     </div>
 
-                    <div className="flex justify-between items-center text-sm text-gray-500 bg-white/5 p-3 rounded-lg border border-white/5">
+                    <div className="flex justify-between items-center text-sm text-slate-500 dark:text-gray-500 bg-slate-100 dark:bg-white/5 p-3 rounded-lg border border-slate-200 dark:border-white/5">
                         <span>{t('crypto.breakeven')}</span>
-                        <span className="text-white font-mono">{currency} {formatMoney(inputs.avgPrice)}</span>
+                        <span className="text-slate-900 dark:text-white font-mono">{currency} {formatMoney(inputs.avgPrice)}</span>
                     </div>
                 </div>
             </div>
